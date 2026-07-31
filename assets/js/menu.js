@@ -1,55 +1,40 @@
 /* ==========================================
    QUANTUM HUB V2
-   Mobile Menu Controller
+   Mobile Menu
 ========================================== */
-
-
-const Menu = {
-
-
-    init(){
-
-        const button =
-            document.getElementById(
-                "menuBtn"
-            );
-
-
-        const sidebar =
-            document.querySelector(
-                ".sidebar"
-            );
-
-
-        if(button && sidebar){
-
-
-            button.addEventListener(
-                "click",
-                ()=>{
-
-                    sidebar.classList.toggle(
-                        "active"
-                    );
-
-                }
-            );
-
-
-        }
-
-
-    }
-
-
-};
 
 
 document.addEventListener(
     "DOMContentLoaded",
-    ()=>{
+    function(){
 
-        Menu.init();
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+
+        const sidebar =
+            document.querySelector(".sidebar");
+
+
+        if(!menuBtn || !sidebar){
+
+            console.log(
+                "Menu element tidak ditemukan"
+            );
+
+            return;
+
+        }
+
+
+        menuBtn.onclick = function(){
+
+            sidebar.classList.toggle(
+                "active"
+            );
+
+        };
+
 
     }
 );

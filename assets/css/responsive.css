@@ -11,43 +11,39 @@
 }
 
 
-
 @media(max-width:768px){
 
+.menu-btn{
 
-    .app{
+    display:block;
 
-        display:block;
+    border:none;
 
-    }
+    background:none;
 
+    font-size:26px;
 
+    cursor:pointer;
 
-    .sidebar{
+    z-index:9999;
 
-        position:fixed;
-
-        top:0;
-
-        left:-260px;
-
-        width:250px;
-
-        height:100vh;
-
-        z-index:999;
-
-        transition:.3s;
-
-    }
+}
 
 
+.sidebar{
 
-    .sidebar.active{
+    left:-260px;
 
-        left:0;
+}
 
-    }
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+}
 
 
 
