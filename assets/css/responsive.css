@@ -1,28 +1,34 @@
 /* ==========================================
+   QUANTUM HUB V2
    MOBILE RESPONSIVE
 ========================================== */
 
 
-@media (max-width: 768px){
+.menu-btn{
+
+    display:none;
+
+}
 
 
-    body{
-        overflow-x:hidden;
-    }
+
+@media(max-width:768px){
 
 
     .app{
+
         display:block;
+
     }
 
 
-    /* Sidebar jadi menu tersembunyi */
 
     .sidebar{
 
         position:fixed;
 
         top:0;
+
         left:-260px;
 
         width:250px;
@@ -31,9 +37,10 @@
 
         z-index:999;
 
-        transition:0.3s;
+        transition:.3s;
 
     }
+
 
 
     .sidebar.active{
@@ -44,8 +51,6 @@
 
 
 
-    /* Main full layar */
-
     .main{
 
         width:100%;
@@ -55,8 +60,6 @@
     }
 
 
-
-    /* Navbar */
 
     .navbar{
 
@@ -70,21 +73,31 @@
 
 
 
-    /* Tombol garis 3 */
-
-    .menu-btn{
+    .navbar-left{
 
         display:flex;
 
-        font-size:25px;
+        align-items:center;
 
-        cursor:pointer;
+        gap:15px;
 
     }
 
 
 
-    /* Tools turun ke bawah */
+    .menu-btn{
+
+        display:block;
+
+        background:none;
+
+        border:none;
+
+        font-size:25px;
+
+    }
+
+
 
     .tools{
 
