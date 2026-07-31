@@ -1,133 +1,123 @@
 /* ==========================================
    QUANTUM HUB V2
-   Admin Controller
+   Admin Users Controller
 ========================================== */
 
 
 const Admin = {
-  
-  
-  init() {
-    
-    this.checkAdmin();
-    
-    this.loadUsers();
-    
-    this.loadActivity();
-    
-  },
-  
-  
-  
-  checkAdmin() {
-    
-    
-    const user = Auth.getUser();
-    
-    
-    if (!user) {
-      
-      return;
-      
+
+
+    async init(){
+
+
+        await this.loadUsers();
+
+
+    },
+
+
+    async loadUsers(){
+
+
+        const list =
+            document.getElementById(
+                "userList"
+            );
+
+
+        if(!list) return;
+
+
+
+        try{
+
+
+            const result =
+                await API.users();
+
+
+
+            if(
+                result.success &&
+                result.data.success
+            ){
+
+
+                list.innerHTML = "";
+
+
+
+                result.data.users.forEach(
+                    user => {
+
+
+                    list.innerHTML += `
+
+                    <tr>
+
+                    <td>
+                    ${user.id}
+                    </td>
+
+
+                    <td>
+                    ${user.username}
+                    </td>
+
+
+                    <td>
+                    ${user.role}
+                    </td>
+
+
+                    </tr>
+
+                    `;
+
+
+                });
+
+
+            } else {
+
+
+                list.innerHTML =
+                `
+                <tr>
+                <td colspan="3">
+                Gagal mengambil data
+                </td>
+                </tr>
+                `;
+
+
+            }
+
+
+
+        }catch(error){
+
+
+            console.error(
+                "Admin Error:",
+                error
+            );
+
+
+        }
+
+
     }
-    
-    
-    if (user.role !== "admin") {
-      
-      
-      alert(
-        "Akses hanya untuk Admin"
-      );
-      
-      
-      window.location.href =
-        "dashboard.html";
-      
-      
-    }
-    
-    
-  },
-  
-  
-  
-  async loadUsers() {
-    
-    
-    console.log(
-      "Loading users..."
-    );
-    
-    
-    // Nanti diganti:
-    
-    // const result = await API.users();
-    
-    
-    
-    const users = [
-      
-      {
-        username: "admin",
-        role: "Admin",
-        status: "Online"
-      },
-      
-      {
-        username: "user01",
-        role: "User",
-        status: "Offline"
-      }
-      
-    ];
-    
-    
-    
-    console.log(
-      users
-    );
-    
-    
-  },
-  
-  
-  
-  loadActivity() {
-    
-    
-    const logs = [
-      
-      "Admin login",
-      
-      "Dashboard dibuka",
-      
-      "System berjalan"
-      
-    ];
-    
-    
-    
-    console.log(
-      "Activity:",
-      logs
-    );
-    
-    
-  }
-  
-  
-  
+
+
 };
 
 
 
 document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    
-    
+"DOMContentLoaded",
+()=>{
+
     Admin.init();
-    
-    
-  }
-);
+
+});
