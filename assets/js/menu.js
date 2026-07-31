@@ -1,39 +1,35 @@
 /* ==========================================
    QUANTUM HUB V2
-   Mobile Menu
+   Mobile Menu Decoration
 ========================================== */
 
 
 document.addEventListener(
     "DOMContentLoaded",
-    function(){
-
-        const menuBtn =
-            document.getElementById("menuBtn");
+    () => {
 
 
-        const sidebar =
-            document.querySelector(".sidebar");
-
-
-        if(!menuBtn || !sidebar){
-
-            console.log(
-                "Menu element tidak ditemukan"
+        const btn =
+            document.getElementById(
+                "menuBtn"
             );
 
-            return;
+
+        if(btn){
+
+
+            btn.onclick = () => {
+
+
+                console.log(
+                    "Quantum Hub Menu"
+                );
+
+
+            };
+
 
         }
-
-
-        menuBtn.onclick = function(){
-
-            sidebar.classList.toggle(
-                "active"
-            );
-
-        };
 
 
     }

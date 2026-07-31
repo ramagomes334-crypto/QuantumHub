@@ -1,6 +1,6 @@
 /* ==========================================
    QUANTUM HUB V2
-   MOBILE RESPONSIVE
+   RESPONSIVE MOBILE
 ========================================== */
 
 
@@ -11,39 +11,33 @@
 }
 
 
+
 @media(max-width:768px){
 
-.menu-btn{
 
-    display:block;
+    body{
 
-    border:none;
+        overflow-x:hidden;
 
-    background:none;
-
-    font-size:26px;
-
-    cursor:pointer;
-
-    z-index:9999;
-
-}
+    }
 
 
-.sidebar{
 
-    left:-260px;
+    .app{
 
-}
+        display:block;
+
+    }
 
 
-.sidebar.active{
 
-    left:0;
+    /* sidebar desktop disembunyikan di HP */
 
-}
+    .sidebar{
 
-}
+        display:none;
+
+    }
 
 
 
@@ -57,6 +51,8 @@
 
 
 
+    /* navbar HP */
+
     .navbar{
 
         display:flex;
@@ -64,6 +60,8 @@
         align-items:center;
 
         justify-content:space-between;
+
+        gap:10px;
 
     }
 
@@ -75,7 +73,7 @@
 
         align-items:center;
 
-        gap:15px;
+        gap:12px;
 
     }
 
@@ -83,17 +81,43 @@
 
     .menu-btn{
 
-        display:block;
+        display:flex;
 
-        background:none;
+        align-items:center;
+
+        justify-content:center;
+
+        width:40px;
+
+        height:40px;
 
         border:none;
 
-        font-size:25px;
+        background:none;
+
+        font-size:24px;
+
+        cursor:pointer;
 
     }
 
 
+
+    /* statistik turun */
+
+    .stats{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+
+
+    /* tools turun */
 
     .tools{
 
@@ -107,15 +131,12 @@
 
 
 
-    .stats{
+    .card{
 
-        display:flex;
-
-        flex-direction:column;
-
-        gap:15px;
+        width:100%;
 
     }
+
 
 
 }
