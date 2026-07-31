@@ -1,0 +1,108 @@
+/* ==========================================
+   QUANTUM HUB V2
+   Responsive
+========================================== */
+
+@media(max-width:992px) {
+  
+  .sidebar {
+    
+    width: 80px;
+    
+    padding: 18px 10px;
+    
+  }
+  
+  .logo span {
+    
+    display: none;
+    
+  }
+  
+  .sidebar a {
+    
+    justify-content: center;
+    
+    font-size: 0;
+    
+  }
+  
+  .sidebar a i {
+    
+    font-size: 20px;
+    
+    margin: 0;
+    
+  }
+  
+  .main {
+    
+    margin-left: 80px;
+    
+    padding: 20px;
+    
+  }
+  
+}
+
+@media(max-width:768px) {
+  
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    
+    grid-template-columns: 1fr;
+    
+  }
+  
+  .stats {
+    
+    grid-template-columns: 1fr;
+    
+  }
+  
+  .tools {
+    
+    grid-template-columns: 1fr;
+    
+  }
+  
+  .admin-grid {
+    
+    grid-template-columns: 1fr;
+    
+  }
+  
+  .navbar {
+    
+    flex-direction: column;
+    
+    align-items: flex-start;
+    
+    gap: 15px;
+    
+  }
+  
+}
+
+@media(max-width:480px) {
+  
+  .main {
+    
+    padding: 15px;
+    
+  }
+  
+  .card {
+    
+    padding: 18px;
+    
+  }
+  
+  .btn {
+    
+    width: 100%;
+    
+  }
+  
+}

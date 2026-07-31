@@ -1,0 +1,102 @@
+/* ==========================================
+   QUANTUM HUB V2
+   Animations
+========================================== */
+
+.fade-in {
+  
+  animation: fadeIn .5s ease;
+  
+}
+
+.slide-up {
+  
+  animation: slideUp .5s ease;
+  
+}
+
+.zoom-in {
+  
+  animation: zoomIn .4s ease;
+  
+}
+
+@keyframes fadeIn {
+  
+  from {
+    
+    opacity: 0;
+    
+  }
+  
+  to {
+    
+    opacity: 1;
+    
+  }
+  
+}
+
+@keyframes slideUp {
+  
+  from {
+    
+    opacity: 0;
+    
+    transform: translateY(30px);
+    
+  }
+  
+  to {
+    
+    opacity: 1;
+    
+    transform: translateY(0);
+    
+  }
+  
+}
+
+@keyframes zoomIn {
+  
+  from {
+    
+    opacity: 0;
+    
+    transform: scale(.9);
+    
+  }
+  
+  to {
+    
+    opacity: 1;
+    
+    transform: scale(1);
+    
+  }
+  
+}
+
+.hover-up {
+  
+  transition: .3s;
+  
+}
+
+.hover-up:hover {
+  
+  transform: translateY(-6px);
+  
+}
+
+.rotate {
+  
+  transition: .3s;
+  
+}
+
+.rotate:hover {
+  
+  transform: rotate(5deg);
+  
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quantum Hub | Login</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/components.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="login-page">
+
+    <div class="login-box glass fade">
+
+        <h1>Quantum Hub</h1>
+
+        <p>Silakan masuk ke akun Anda</p>
+
+        <div class="form-group">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                class="input"
+                placeholder="Masukkan username">
+
+        </div>
+
+        <div class="form-group" style="margin-top:15px;">
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                class="input"
+                placeholder="Masukkan password">
+
+        </div>
+
+        <button
+            class="btn"
+            id="loginBtn"
+            style="width:100%;margin-top:25px;">
+
+            <i class="fa-solid fa-right-to-bracket"></i>
+
+            Login
+
+        </button>
+
+        <p
+            id="status"
+            style="margin-top:20px;text-align:center;">
+        </p>
+
+    </div>
+
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/app.js"></script>
+    <script src="../assets/js/login.js"></script>
+
+</body>
+
+</html>

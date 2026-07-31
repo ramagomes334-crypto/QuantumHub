@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quantum Hub | QR Generator</title>
+
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-cube"></i>
+
+<span>Quantum Hub</span>
+
+</div>
+
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="qr.html" class="active">
+
+<i class="fa-solid fa-qrcode"></i>
+
+QR Generator
+
+</a>
+
+</li>
+
+
+<li>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Admin
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+<header class="navbar">
+
+
+<div class="navbar-left">
+
+<h1>QR Generator</h1>
+
+<p>Buat QR Code dengan cepat</p>
+
+</div>
+
+
+<div class="avatar">
+
+Q
+
+</div>
+
+
+</header>
+
+
+
+<section>
+
+
+<div class="card qr-box">
+
+
+<h3>
+
+<i class="fa-solid fa-qrcode"></i>
+
+Masukkan Text / Link
+
+</h3>
+
+
+<input
+
+id="qrText"
+
+class="input"
+
+type="text"
+
+placeholder="Masukkan teks atau URL"
+
+>
+
+
+
+<button
+
+id="generateQR"
+
+class="btn"
+
+style="margin-top:15px;">
+
+Generate QR
+
+</button>
+
+
+
+<div
+
+id="qrPreview"
+
+class="qr-preview">
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+</main>
+
+
+</div>
+
+
+
+
+<script src="../assets/js/utils.js"></script>
+<script src="../assets/js/qr.js"></script>
+<script src="../assets/js/app.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quantum Hub | Fake Chat</title>
+
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+<i class="fa-solid fa-cube"></i>
+
+<span>Quantum Hub</span>
+
+</div>
+
+
+<ul>
+
+<li>
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+Dashboard
+
+</a>
+</li>
+
+
+<li>
+<a href="fakechat.html" class="active">
+
+<i class="fa-solid fa-comments"></i>
+Fake Chat
+
+</a>
+</li>
+
+
+<li>
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+Admin
+
+</a>
+</li>
+
+
+</ul>
+
+
+</aside>
+
+
+
+<main class="main">
+
+
+<header class="navbar">
+
+<div class="navbar-left">
+
+<h1>Fake Chat Generator</h1>
+
+<p>Buat preview chat custom</p>
+
+</div>
+
+
+<div class="avatar">
+
+Q
+
+</div>
+
+
+</header>
+
+
+
+<section class="grid grid-2">
+
+
+<div class="card">
+
+
+<h3>Pengaturan Chat</h3>
+
+
+<input
+id="contactName"
+class="input"
+placeholder="Nama kontak">
+
+
+<textarea
+id="messageText"
+class="input"
+placeholder="Isi pesan"
+style="margin-top:15px;height:120px;">
+</textarea>
+
+
+<button
+id="createChat"
+class="btn"
+style="margin-top:15px;">
+
+Buat Chat
+
+</button>
+
+
+</div>
+
+
+
+<div class="card chat-preview" id="chatPreview">
+
+
+<h3>Preview</h3>
+
+
+<p style="color:#94a3b8">
+
+Belum ada chat
+
+</p>
+
+
+</div>
+
+
+
+</section>
+
+
+
+</main>
+
+
+</div>
+
+
+<script src="../assets/js/utils.js"></script>
+<script src="../assets/js/fakechat.js"></script>
+<script src="../assets/js/app.js"></script>
+
+
+</body>
+
+</html>
