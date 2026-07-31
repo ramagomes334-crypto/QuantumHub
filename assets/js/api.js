@@ -7,7 +7,7 @@ const API = {
 
     // Nanti ganti dengan URL Cloudflare Worker
 
-    baseURL: "https://your-worker.workers.dev",
+    baseURL: "https://quantumhub-api.kyrogarut.workers.dev/",
 
 
     async request(endpoint, options = {}){
