@@ -1,6 +1,6 @@
 /* ==========================================
    QUANTUM HUB V2
-   RESPONSIVE MOBILE
+   MOBILE RESPONSIVE FIX
 ========================================== */
 
 
@@ -12,56 +12,60 @@
 
 
 
-@media(max-width:768px){
+@media screen and (max-width:768px){
 
 
-    body{
-
-        overflow-x:hidden;
-
-    }
-
-
+    /* APP */
 
     .app{
 
-        display:block;
+        display:block !important;
+
+        min-height:100vh;
 
     }
 
 
 
-    /* sidebar desktop disembunyikan di HP */
+    /* HILANGKAN SIDEBAR HP */
 
     .sidebar{
 
-        display:none;
+        display:none !important;
+
+        position:static !important;
 
     }
 
 
+
+    /* MAIN FULL */
 
     .main{
 
-        width:100%;
+        width:100% !important;
 
-        padding:15px;
+        margin-left:0 !important;
+
+        padding:15px !important;
 
     }
 
 
 
-    /* navbar HP */
+    /* NAVBAR */
 
     .navbar{
 
-        display:flex;
+        display:flex !important;
 
-        align-items:center;
+        width:100%;
 
         justify-content:space-between;
 
-        gap:10px;
+        align-items:center;
+
+        margin-bottom:20px;
 
     }
 
@@ -73,27 +77,29 @@
 
         align-items:center;
 
-        gap:12px;
+        gap:10px;
 
     }
 
 
 
+    /* GARIS 3 PEMANIS */
+
     .menu-btn{
 
-        display:flex;
+        display:flex !important;
+
+        width:42px;
+
+        height:42px;
+
+        border:none;
+
+        background:transparent;
 
         align-items:center;
 
         justify-content:center;
-
-        width:40px;
-
-        height:40px;
-
-        border:none;
-
-        background:none;
 
         font-size:24px;
 
@@ -103,13 +109,13 @@
 
 
 
-    /* statistik turun */
+    /* STAT */
 
     .stats{
 
-        display:flex;
+        display:flex !important;
 
-        flex-direction:column;
+        flex-direction:column !important;
 
         gap:15px;
 
@@ -117,13 +123,13 @@
 
 
 
-    /* tools turun */
+    /* TOOLS */
 
     .tools{
 
-        display:flex;
+        display:flex !important;
 
-        flex-direction:column;
+        flex-direction:column !important;
 
         gap:15px;
 
@@ -133,10 +139,21 @@
 
     .card{
 
-        width:100%;
+        width:100% !important;
 
     }
 
+
+
+    /* GRID */
+
+    .grid-2,
+    .grid-3,
+    .grid-4{
+
+        grid-template-columns:1fr !important;
+
+    }
 
 
 }
