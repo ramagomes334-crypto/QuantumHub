@@ -307,3 +307,58 @@
     }
 
 }
+
+/* ===========================
+   Fix Mobile V4
+=========================== */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        position:sticky;
+        top:0;
+        z-index:100;
+        background:var(--background);
+        padding-bottom:10px;
+
+    }
+
+    .main{
+
+        min-height:100vh;
+        overflow-x:hidden;
+
+    }
+
+    body{
+
+        overflow-x:hidden;
+
+    }
+
+    .bottom-nav{
+
+        box-shadow:0 -5px 20px rgba(0,0,0,.25);
+
+    }
+
+    .bottom-nav span{
+
+        font-size:11px;
+
+    }
+
+    .bottom-nav i{
+
+        font-size:18px;
+
+    }
+
+    .sidebar{
+
+        display:none !important;
+
+    }
+
+}

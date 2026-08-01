@@ -20,33 +20,18 @@
 /* ===========================
    Sidebar Desktop
 =========================== */
-
 .sidebar{
-
     width:270px;
-
-    position:fixed;
-
-    left:0;
-
-    top:0;
-
-    bottom:0;
-
-    z-index:1000;
-
-    overflow-y:auto;
-
-    background:rgba(17,24,39,.92);
-
-    backdrop-filter:blur(18px);
-
+    background:rgba(17,24,39,.95);
+    backdrop-filter:blur(20px);
     border-right:1px solid var(--border);
-
+    position:fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    overflow-y:auto;
+    z-index:999;
     transition:.3s;
-
-    padding:22px;
-
 }
 
 /* Logo */
@@ -148,19 +133,11 @@
 /* ===========================
    Main
 =========================== */
-
 .main{
-
     flex:1;
-
     margin-left:270px;
-
-    min-height:100vh;
-
-    padding:28px;
-
+    padding:25px;
     transition:.3s;
-
 }
 
 /* ===========================
@@ -588,5 +565,54 @@ body{
         margin-left:270px;
 
     }
+
+}
+
+
+/* Sidebar Mobile */
+
+@media(max-width:768px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.sidebar.show{
+
+display:block !important;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+bottom:0;
+
+width:260px;
+
+z-index:99999;
+
+animation:slideMenu .25s ease;
+
+}
+
+}
+
+@keyframes slideMenu{
+
+from{
+
+transform:translateX(-100%);
+
+}
+
+to{
+
+transform:translateX(0);
+
+}
 
 }

@@ -1,43 +1,32 @@
 /* ==========================================
-   Quantum Hub V3
-   Menu
+   QUANTUM HUB V3
+   Mobile Menu
 ========================================== */
 
-const Menu = {
+document.addEventListener("DOMContentLoaded",()=>{
 
-    init(){
+const btn=document.getElementById("menuBtn");
 
-        const current =
-            location.pathname
-            .split("/")
-            .pop();
+const sidebar=document.querySelector(".sidebar");
 
-        document
-        .querySelectorAll(".bottom-nav a")
-        .forEach(item=>{
+if(!btn||!sidebar)return;
 
-            item.classList.remove("active");
+btn.onclick=()=>{
 
-            if(
-                item.getAttribute("href")
-                === current
-            ){
-
-                item.classList.add("active");
-
-            }
-
-        });
-
-    }
+sidebar.classList.toggle("show");
 
 };
 
-document.addEventListener(
-    "DOMContentLoaded",
-    ()=>{
+document.addEventListener("click",(e)=>{
 
-        Menu.init();
+if(window.innerWidth>768)return;
 
-    }
-);
+if(!sidebar.contains(e.target)&&!btn.contains(e.target)){
+
+sidebar.classList.remove("show");
+
+}
+
+});
+
+});
