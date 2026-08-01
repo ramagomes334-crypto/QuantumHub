@@ -1,13 +1,15 @@
 /* ==========================================
-   QUANTUM HUB V2
+   QUANTUM HUB V3
    API Manager
 ========================================== */
 
 const API = {
 
-    // Nanti ganti dengan URL Cloudflare Worker
+
+    // Cloudflare Worker URL
 
     baseURL: "https://quantumhub-api.kyrogarut.workers.dev",
+
 
 
     async request(endpoint, options = {}){
@@ -35,19 +37,27 @@ const API = {
 
 
                     body:
+
                     options.body
+
                     ?
+
                     JSON.stringify(options.body)
+
                     :
+
                     null
+
 
                 }
 
             );
 
 
+
             const data =
             await response.json();
+
 
 
             return {
@@ -59,13 +69,18 @@ const API = {
             };
 
 
+
         }catch(error){
 
 
             console.error(
+
                 "API Error:",
+
                 error
+
             );
+
 
 
             return {
@@ -84,7 +99,12 @@ const API = {
     },
 
 
-    // Login
+
+
+    // =========================
+    // AUTH
+    // =========================
+
 
     async login(username,password){
 
@@ -113,7 +133,12 @@ const API = {
     },
 
 
-    // User profile
+
+
+    // =========================
+    // PROFILE
+    // =========================
+
 
     async profile(){
 
@@ -128,7 +153,12 @@ const API = {
     },
 
 
-    // Statistik dashboard
+
+
+    // =========================
+    // DASHBOARD
+    // =========================
+
 
     async stats(){
 
@@ -143,7 +173,12 @@ const API = {
     },
 
 
-    // Admin user list
+
+
+    // =========================
+    // ADMIN USERS
+    // =========================
+
 
     async users(){
 
@@ -155,10 +190,132 @@ const API = {
         );
 
 
+    },
+
+
+
+
+    // Tambah User
+
+    async addUser(user){
+
+
+        return this.request(
+
+            "/users",
+
+            {
+
+                method:"POST",
+
+                body:user
+
+            }
+
+        );
+
+
+    },
+
+
+
+
+    // Hapus User
+
+    async deleteUser(id){
+
+
+        return this.request(
+
+            "/users/" + id,
+
+            {
+
+                method:"DELETE"
+
+            }
+
+        );
+
+
+    },
+
+
+
+
+    // Update User
+
+    async updateUser(id,user){
+
+
+        return this.request(
+
+            "/users/" + id,
+
+            {
+
+                method:"PUT",
+
+                body:user
+
+            }
+
+        );
+
+
+    },
+
+
+
+
+    // =========================
+    // TOOLS
+    // =========================
+
+
+    async tools(){
+
+
+        return this.request(
+
+            "/tools"
+
+        );
+
+
+    },
+
+
+
+
+    async addTool(tool){
+
+
+        return this.request(
+
+            "/tools",
+
+            {
+
+                method:"POST",
+
+                body:tool
+
+            }
+
+        );
+
+
     }
+
+
 
 
 };
 
+
+
+
+// Global
 
 window.API = API;
