@@ -4,70 +4,364 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Quantum Hub | Admin Users</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Quantum Hub | Admin</title>
 
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/layout.css">
 <link rel="stylesheet" href="../assets/css/components.css">
 <link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
+<!-- Sidebar -->
 
 <aside class="sidebar">
 
 <div class="logo">
-<i class="fa-solid fa-cube"></i>
-<span>Quantum Hub</span>
-</div>
 
+<i class="fa-solid fa-cube"></i>
+
+<span>Quantum Hub</span>
+
+</div>
 
 <ul>
 
 <li>
-<a href="dashboard.html">
-Dashboard
-</a>
-</li>
 
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
 
 <li>
-<a href="admin.html" class="active">
-Admin Users
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
 </a>
+
 </li>
 
+<li>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Fake Chat</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR Generator</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin.html" class="active">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
 
 </ul>
 
-
 </aside>
-
-
 
 <main class="main">
 
 <header class="navbar">
 
+<div class="navbar-left">
+
+<button
+id="menuBtn"
+class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
 <div>
 
-<h1>Admin Users</h1>
+<h1>Admin Panel</h1>
 
-<p>Daftar pengguna Quantum Hub</p>
+<p>Kelola pengguna Quantum Hub</p>
+
+</div>
+
+</div>
+
+<div class="navbar-right">
+
+<div class="avatar">
+
+A
+
+</div>
 
 </div>
 
 </header>
 
+<!-- =========================
+Statistik
+========================= -->
+
+<section class="stats">
+
+<div class="card stat-card">
+
+<p>Total User</p>
+
+<h2 id="totalUsers">
+
+0
+
+</h2>
+
+<small>User Terdaftar</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Total Admin</p>
+
+<h2 id="totalAdmin">
+
+1
+
+</h2>
+
+<small>Administrator</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Total Tools</p>
+
+<h2>
+
+3
+
+</h2>
+
+<small>Tools Aktif</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Status Server</p>
+
+<h2>
+
+<span class="badge badge-success">
+
+Online
+
+</span>
+
+</h2>
+
+<small>Cloudflare Worker</small>
+
+</div>
+
+</section>
+
+<!-- =========================
+Quick Action
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+⚡ Quick Action
+
+</h2>
+
+<div class="cards">
+
 <div class="card">
+
+<h3>
+
+➕ Tambah User
+
+</h3>
+
+<p>
+
+Menambahkan akun pengguna baru.
+
+</p>
+
+<br>
+
+<button
+id="addUserBtn"
+class="btn">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Tambah User
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🛡 Kelola Admin
+
+</h3>
+
+<p>
+
+Mengatur hak akses administrator.
+
+</p>
+
+<br>
+
+<button
+class="btn">
+
+<i class="fa-solid fa-user-shield"></i>
+
+Kelola
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⚙ Pengaturan
+
+</h3>
+
+<p>
+
+Mengubah konfigurasi Quantum Hub.
+
+</p>
+
+<br>
+
+<a
+href="settings.html"
+class="btn">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Daftar User
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+👥 Daftar User
+
+</h2>
+
+<div class="card">
+
+<div style="display:flex;gap:15px;flex-wrap:wrap;margin-bottom:20px;">
+
+<input
+
+type="text"
+
+id="searchUser"
+
+class="input"
+
+placeholder="Cari username..."
+
+style="flex:1;min-width:220px;">
+
+<button
+
+id="refreshUser"
+
+class="btn">
+
+<i class="fa-solid fa-rotate"></i>
+
+Refresh
+
+</button>
+
+</div>
 
 <table class="table">
 
@@ -75,13 +369,15 @@ Admin Users
 
 <tr>
 
-<th>No</th>
+<th>ID</th>
 
 <th>Username</th>
 
 <th>Role</th>
 
 <th>Status</th>
+
+<th>Aksi</th>
 
 </tr>
 
@@ -91,9 +387,9 @@ Admin Users
 
 <tr>
 
-<td colspan="4">
+<td colspan="5" style="text-align:center;">
 
-Loading...
+Memuat data...
 
 </td>
 
@@ -105,11 +401,165 @@ Loading...
 
 </div>
 
-</main>
+</section>
 
+<!-- =========================
+Aktivitas Admin
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📋 Aktivitas Admin
+
+</h2>
+
+<div class="card">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Waktu</th>
+
+<th>Aktivitas</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>Baru saja</td>
+
+<td>Masuk ke Admin Panel</td>
+
+<td>
+
+<span class="badge badge-success">
+
+Berhasil
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>-</td>
+
+<td>Belum ada aktivitas lain</td>
+
+<td>
+
+<span class="badge badge-warning">
+
+Menunggu
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 </div>
 
+</section>
+
+<!-- =========================
+Footer
+========================= -->
+
+<footer class="footer">
+
+<p>
+
+© 2026 Quantum Hub V3
+
+<br>
+
+Powered by Cloudflare Workers • Admin Panel
+
+</p>
+
+</footer>
+
+<!-- =========================
+Bottom Navigation (HP)
+========================= -->
+
+<nav class="bottom-nav">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chat</span>
+
+</a>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR</span>
+
+</a>
+
+<a href="admin.html" class="active">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+</main>
+
+</div>
+
+<!-- =========================
+JavaScript
+========================= -->
 
 <script src="../assets/js/utils.js"></script>
 
@@ -119,8 +569,11 @@ Loading...
 
 <script src="../assets/js/admin.js"></script>
 
-<script src="../assets/js/app.js"></script>
+<script src="../assets/js/menu.js"></script>
 
+<script src="../assets/js/nav.js"></script>
+
+<script src="../assets/js/app.js"></script>
 
 </body>
 

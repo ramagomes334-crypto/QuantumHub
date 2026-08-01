@@ -4,10 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Quantum Hub | QR Generator</title>
-
 
 <link rel="stylesheet" href="../assets/css/style.css">
 <link rel="stylesheet" href="../assets/css/layout.css">
@@ -16,21 +17,16 @@
 <link rel="stylesheet" href="../assets/css/animations.css">
 <link rel="stylesheet" href="../assets/css/responsive.css">
 
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
-
 <aside class="sidebar">
-
 
 <div class="logo">
 
@@ -40,7 +36,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
-
 <ul>
 
 <li>
@@ -49,12 +44,35 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <i class="fa-solid fa-house"></i>
 
-Dashboard
+<span>Dashboard</span>
 
 </a>
 
 </li>
 
+<li>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Fake Chat</span>
+
+</a>
+
+</li>
 
 <li>
 
@@ -62,12 +80,11 @@ Dashboard
 
 <i class="fa-solid fa-qrcode"></i>
 
-QR Generator
+<span>QR Generator</span>
 
 </a>
 
 </li>
-
 
 <li>
 
@@ -75,34 +92,53 @@ QR Generator
 
 <i class="fa-solid fa-user-shield"></i>
 
-Admin
+<span>Admin</span>
 
 </a>
 
 </li>
 
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
 
 </ul>
 
-
 </aside>
-
-
 
 <main class="main">
 
-
 <header class="navbar">
-
 
 <div class="navbar-left">
 
+<button
+id="menuBtn"
+class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div>
+
 <h1>QR Generator</h1>
 
-<p>Buat QR Code dengan cepat</p>
+<p>Buat QR Code dengan mudah</p>
 
 </div>
 
+</div>
+
+<div class="navbar-right">
 
 <div class="avatar">
 
@@ -110,83 +146,521 @@ Q
 
 </div>
 
+</div>
 
 </header>
 
+<!-- =========================
+Statistik
+========================= -->
 
+<section class="stats">
 
-<section>
+<div class="card stat-card">
 
+<p>Total QR</p>
+
+<h2 id="totalQr">
+
+0
+
+</h2>
+
+<small>QR dibuat</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Status</p>
+
+<h2>
+
+<span class="badge badge-success">
+
+Online
+
+</span>
+
+</h2>
+
+<small>Generator Aktif</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Format</p>
+
+<h2>
+
+PNG
+
+</h2>
+
+<small>High Quality</small>
+
+</div>
+
+</section>
+
+<!-- =========================
+QR Generator
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📱 QR Generator
+
+</h2>
 
 <div class="card qr-box">
 
+<label>
 
-<h3>
+Isi QR Code
 
-<i class="fa-solid fa-qrcode"></i>
-
-Masukkan Text / Link
-
-</h3>
-
+</label>
 
 <input
+
+type="text"
 
 id="qrText"
 
 class="input"
 
-type="text"
-
-placeholder="Masukkan teks atau URL"
-
->
-
-
+placeholder="Masukkan teks atau link...">
 
 <button
 
-id="generateQR"
+id="generateQr"
 
 class="btn"
 
-style="margin-top:15px;">
+style="margin-top:20px;">
+
+<i class="fa-solid fa-qrcode"></i>
 
 Generate QR
 
 </button>
 
-
-
 <div
 
 id="qrPreview"
 
-class="qr-preview">
+class="qr-preview"
+
+style="margin-top:25px;">
+
+<p style="color:var(--text-secondary);">
+
+QR Code akan muncul di sini.
+
+</p>
 
 </div>
 
-
-
 </div>
-
 
 </section>
 
+<!-- =========================
+Quick Action
+========================= -->
 
+<section class="section">
 
-</main>
+<h2 class="section-title">
 
+⚡ Quick Action
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+💾 Download PNG
+
+</h3>
+
+<p>
+
+Simpan QR Code ke galeri.
+
+</p>
+
+<br>
+
+<button
+
+id="downloadQr"
+
+class="btn">
+
+<i class="fa-solid fa-download"></i>
+
+Download
+
+</button>
 
 </div>
 
+<div class="card">
 
+<h3>
 
+📤 Bagikan
+
+</h3>
+
+<p>
+
+Bagikan QR Code dengan cepat.
+
+</p>
+
+<br>
+
+<button
+
+id="shareQr"
+
+class="btn">
+
+<i class="fa-solid fa-share-nodes"></i>
+
+Bagikan
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🗑 Reset
+
+</h3>
+
+<p>
+
+Hapus QR dan mulai lagi.
+
+</p>
+
+<br>
+
+<button
+
+id="resetQr"
+
+class="btn btn-outline">
+
+<i class="fa-solid fa-trash"></i>
+
+Reset
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Riwayat QR
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📋 Riwayat QR
+
+</h2>
+
+<div class="card">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Waktu</th>
+
+<th>Isi QR</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyQr">
+
+<tr>
+
+<td>-</td>
+
+<td>Belum ada riwayat</td>
+
+<td>
+
+<span class="badge badge-warning">
+
+Menunggu
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- =========================
+Tips
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+💡 Tips
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+🌐 Link Website
+
+</h3>
+
+<p>
+
+Masukkan URL lengkap agar QR Code dapat dibuka langsung.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📝 Teks
+
+</h3>
+
+<p>
+
+QR Code juga bisa berisi teks biasa, nomor telepon, atau email.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📱 Scan
+
+</h3>
+
+<p>
+
+Gunakan kamera HP atau aplikasi scanner untuk mencoba hasil QR.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Preview Info
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+👀 Informasi QR
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+Ukuran
+
+</h3>
+
+<p id="qrSize">
+
+256 x 256 px
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Format
+
+</h3>
+
+<p>
+
+PNG
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Status
+
+</h3>
+
+<span class="badge badge-success">
+
+Siap Digunakan
+
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Footer
+========================= -->
+
+<footer class="footer">
+
+<p>
+
+© 2026 Quantum Hub V3
+
+<br>
+
+Powered by QR Generator
+
+</p>
+
+</footer>
+
+<!-- =========================
+Bottom Navigation (HP)
+========================= -->
+
+<nav class="bottom-nav">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chat</span>
+
+</a>
+
+<a href="qr.html" class="active">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR</span>
+
+</a>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+</main>
+
+</div>
+
+<!-- =========================
+JavaScript
+========================= -->
 
 <script src="../assets/js/utils.js"></script>
-<script src="../assets/js/qr.js"></script>
-<script src="../assets/js/app.js"></script>
 
+<script src="../assets/js/api.js"></script>
+
+<script src="../assets/js/auth.js"></script>
+
+<script src="../assets/js/qr.js"></script>
+
+<script src="../assets/js/menu.js"></script>
+
+<script src="../assets/js/nav.js"></script>
+
+<script src="../assets/js/app.js"></script>
 
 </body>
 

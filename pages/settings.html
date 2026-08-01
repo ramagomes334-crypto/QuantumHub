@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Quantum Hub | Settings</title>
 
@@ -20,15 +22,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
-
 <aside class="sidebar">
-
 
 <div class="logo">
 
@@ -38,53 +36,99 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
-
 <ul>
 
 <li>
+
 <a href="dashboard.html">
 
 <i class="fa-solid fa-house"></i>
-Dashboard
+
+<span>Dashboard</span>
 
 </a>
+
 </li>
 
-
 <li>
-<a href="settings.html" class="active">
 
-<i class="fa-solid fa-gear"></i>
-Settings
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Fake Chat</span>
+
+</a>
+
+</li>
 
 <li>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR Generator</span>
+
+</a>
+
+</li>
+
+<li>
+
 <a href="admin.html">
 
 <i class="fa-solid fa-user-shield"></i>
-Admin
+
+<span>Admin</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="settings.html" class="active">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
 
 </ul>
 
-
 </aside>
-
-
 
 <main class="main">
 
-
 <header class="navbar">
 
-
 <div class="navbar-left">
+
+<button
+id="menuBtn"
+class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div>
 
 <h1>Settings</h1>
 
@@ -92,6 +136,9 @@ Admin
 
 </div>
 
+</div>
+
+<div class="navbar-right">
 
 <div class="avatar">
 
@@ -99,82 +146,543 @@ Q
 
 </div>
 
+</div>
 
 </header>
 
+<!-- =========================
+Statistik
+========================= -->
 
+<section class="stats">
 
+<div class="card stat-card">
 
-<section class="grid grid-2">
+<p>Versi</p>
 
+<h2>
 
-<div class="card">
+V3.0
 
+</h2>
 
-<h3>
-<i class="fa-solid fa-user"></i>
-Profil
-</h3>
+<small>Quantum Hub</small>
 
+</div>
 
-<p>
-Username:
-<span id="profileName">
-User
+<div class="card stat-card">
+
+<p>Status</p>
+
+<h2>
+
+<span class="badge badge-success">
+
+Online
+
 </span>
-</p>
 
+</h2>
 
-<button class="btn" id="logoutBtn">
-
-Logout
-
-</button>
-
+<small>Semua Sistem Aktif</small>
 
 </div>
 
+<div class="card stat-card">
 
+<p>Theme</p>
 
+<h2>
 
-<div class="card">
+Dark
 
+</h2>
 
-<h3>
-<i class="fa-solid fa-palette"></i>
-Tema
-</h3>
-
-
-<p>
-Mode tampilan Quantum Hub
-</p>
-
-
-<button class="btn" id="themeBtn">
-
-Toggle Theme
-
-</button>
-
+<small>Default</small>
 
 </div>
-
 
 </section>
 
+<!-- =========================
+Pengaturan
+========================= -->
 
+<section class="section">
 
-</main>
+<h2 class="section-title">
 
+⚙️ Pengaturan Umum
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+👤 Profil
+
+</h3>
+
+<label>Nama</label>
+
+<input
+type="text"
+class="input"
+id="username"
+placeholder="Masukkan nama">
+
+<label style="margin-top:18px;">
+
+Email
+
+</label>
+
+<input
+type="email"
+class="input"
+id="email"
+placeholder="Masukkan email">
 
 </div>
 
+<div class="card">
+
+<h3>
+
+🎨 Tampilan
+
+</h3>
+
+<label>
+
+Tema
+
+</label>
+
+<select
+class="input"
+id="theme">
+
+<option value="dark">
+
+Dark
+
+</option>
+
+<option value="light">
+
+Light
+
+</option>
+
+</select>
+
+<label style="margin-top:18px;">
+
+Bahasa
+
+</label>
+
+<select
+class="input"
+id="language">
+
+<option>
+
+Indonesia
+
+</option>
+
+<option>
+
+English
+
+</option>
+
+</select>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🔔 Notifikasi
+
+</h3>
+
+<label>
+
+<input
+type="checkbox"
+checked>
+
+ Aktifkan Notifikasi
+
+</label>
+
+<br><br>
+
+<label>
+
+<input
+type="checkbox"
+checked>
+
+ Efek Suara
+
+</label>
+
+<br><br>
+
+<button
+id="saveSettings"
+class="btn">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Simpan Pengaturan
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Keamanan
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+🔒 Keamanan
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+🔑 Password
+
+</h3>
+
+<label>
+
+Password Lama
+
+</label>
+
+<input
+type="password"
+class="input"
+id="oldPassword"
+placeholder="Masukkan password lama">
+
+<label style="margin-top:18px;">
+
+Password Baru
+
+</label>
+
+<input
+type="password"
+class="input"
+id="newPassword"
+placeholder="Masukkan password baru">
+
+<label style="margin-top:18px;">
+
+Konfirmasi Password
+
+</label>
+
+<input
+type="password"
+class="input"
+id="confirmPassword"
+placeholder="Ulangi password">
+
+<br><br>
+
+<button
+id="changePassword"
+class="btn">
+
+<i class="fa-solid fa-key"></i>
+
+Ubah Password
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🛡 Keamanan Akun
+
+</h3>
+
+<label>
+
+<input type="checkbox" checked>
+
+ Aktifkan Verifikasi Login
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox">
+
+ Login Dengan PIN
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox" checked>
+
+ Logout Otomatis Saat Tidak Aktif
+
+</label>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📱 Informasi Aplikasi
+
+</h3>
+
+<p>
+
+Versi :
+<b>Quantum Hub V3.0</b>
+
+</p>
+
+<br>
+
+<p>
+
+Framework :
+<b>HTML • CSS • JavaScript</b>
+
+</p>
+
+<br>
+
+<p>
+
+Server :
+<b>Cloudflare Workers</b>
+
+</p>
+
+<br>
+
+<p>
+
+Database :
+<b>D1 SQLite</b>
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Riwayat
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📋 Riwayat Perubahan
+
+</h2>
+
+<div class="card">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Tanggal</th>
+
+<th>Perubahan</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>2026</td>
+
+<td>Upgrade Quantum Hub V3</td>
+
+<td>
+
+<span class="badge badge-success">
+
+Selesai
+
+</span>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>-</td>
+
+<td>Belum ada perubahan lain</td>
+
+<td>
+
+<span class="badge badge-warning">
+
+Menunggu
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- =========================
+Footer
+========================= -->
+
+<footer class="footer">
+
+<p>
+
+© 2026 Quantum Hub V3
+
+<br>
+
+Powered by Cloudflare Workers
+
+</p>
+
+</footer>
+
+<!-- =========================
+Bottom Navigation (HP)
+========================= -->
+
+<nav class="bottom-nav">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chat</span>
+
+</a>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR</span>
+
+</a>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+<a href="settings.html" class="active">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+</main>
+
+</div>
+
+<!-- =========================
+JavaScript
+========================= -->
+
+<script src="../assets/js/utils.js"></script>
+
+<script src="../assets/js/api.js"></script>
 
 <script src="../assets/js/auth.js"></script>
-<script src="../assets/js/settings.js"></script>
-<script src="../assets/js/app.js"></script>
 
+<script src="../assets/js/settings.js"></script>
+
+<script src="../assets/js/menu.js"></script>
+
+<script src="../assets/js/nav.js"></script>
+
+<script src="../assets/js/app.js"></script>
 
 </body>
 

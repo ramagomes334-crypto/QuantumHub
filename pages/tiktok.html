@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Quantum Hub | TikTok Downloader</title>
 
@@ -20,15 +22,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
+<!-- Sidebar Desktop -->
 
 <aside class="sidebar">
-
 
 <div class="logo">
 
@@ -38,76 +38,187 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
-
 <ul>
 
 <li>
+
 <a href="dashboard.html">
 
 <i class="fa-solid fa-house"></i>
-Dashboard
+
+<span>Dashboard</span>
 
 </a>
+
 </li>
 
-
 <li>
+
 <a href="tiktok.html" class="active">
 
 <i class="fa-brands fa-tiktok"></i>
-TikTok
+
+<span>TikTok</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Fake Chat</span>
+
+</a>
+
+</li>
 
 <li>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR Generator</span>
+
+</a>
+
+</li>
+
+<li>
+
 <a href="admin.html">
 
 <i class="fa-solid fa-user-shield"></i>
-Admin
+
+<span>Admin</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
 
 </ul>
 
-
 </aside>
-
-
-
 
 <main class="main">
 
-
 <header class="navbar">
-
 
 <div class="navbar-left">
 
+<button
+id="menuBtn"
+class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div>
+
 <h1>TikTok Downloader</h1>
 
-<p>Download video TikTok dengan mudah</p>
+<p>Download video TikTok tanpa watermark</p>
 
 </div>
 
+</div>
+
+<div class="navbar-right">
 
 <div class="avatar">
+
 Q
+
 </div>
 
+</div>
 
 </header>
 
+<!-- =========================
+Statistik
+========================= -->
 
+<section class="stats">
 
-<section>
+<div class="card stat-card">
 
+<p>Total Download</p>
+
+<h2 id="totalDownload">
+
+0
+
+</h2>
+
+<small>Video berhasil diunduh</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Status API</p>
+
+<h2>
+
+<span class="badge badge-success">
+
+Online
+
+</span>
+
+</h2>
+
+<small>Cloudflare Worker</small>
+
+</div>
+
+<div class="card stat-card">
+
+<p>Format</p>
+
+<h2>
+
+MP4
+
+</h2>
+
+<small>No Watermark</small>
+
+</div>
+
+</section>
+
+<!-- =========================
+Downloader
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📥 TikTok Downloader
+
+</h2>
 
 <div class="card download-box">
-
 
 <h3>
 
@@ -116,7 +227,6 @@ Q
 Masukkan Link TikTok
 
 </h3>
-
 
 <input
 
@@ -130,49 +240,317 @@ placeholder="https://www.tiktok.com/..."
 
 >
 
-
 <button
-
-class="btn"
 
 id="downloadBtn"
 
-style="margin-top:15px;">
+class="btn"
+
+style="margin-top:18px;">
 
 <i class="fa-solid fa-download"></i>
 
-Download
+Download Sekarang
 
 </button>
 
+<div
 
-
-<div id="result"
+id="result"
 
 style="margin-top:25px;">
 
 </div>
 
-
 </div>
-
 
 </section>
 
+<!-- =========================
+Informasi
+========================= -->
 
+<section class="section">
 
-</main>
+<h2 class="section-title">
 
+ℹ️ Informasi
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+🚀 Cepat
+
+</h3>
+
+<p>
+
+Download video TikTok dengan kecepatan tinggi.
+
+</p>
 
 </div>
 
+<div class="card">
 
+<h3>
+
+🎥 HD Quality
+
+</h3>
+
+<p>
+
+Video asli tanpa kompresi.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💧 Tanpa Watermark
+
+</h3>
+
+<p>
+
+Video tanpa watermark TikTok.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Riwayat Download
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📋 Riwayat Download
+
+</h2>
+
+<div class="card">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Waktu</th>
+
+<th>Judul</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyTable">
+
+<tr>
+
+<td>-</td>
+
+<td>Belum ada riwayat download</td>
+
+<td>
+
+<span class="badge badge-warning">
+
+Menunggu
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- =========================
+Tips
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+💡 Tips
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+📱 Link TikTok
+
+</h3>
+
+<p>
+
+Tempel link video TikTok yang valid agar proses download berhasil.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+⚡ Server
+
+</h3>
+
+<p>
+
+Pastikan API Quantum Hub sedang Online sebelum melakukan download.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎬 Format
+
+</h3>
+
+<p>
+
+Video akan tersedia dalam format MP4 tanpa watermark jika didukung.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Footer
+========================= -->
+
+<footer class="footer">
+
+<p>
+
+© 2026 Quantum Hub V3
+
+<br>
+
+Powered by Cloudflare Workers • TikTok Downloader
+
+</p>
+
+</footer>
+
+</main>
+
+<!-- =========================
+Bottom Navigation (HP)
+========================= -->
+
+<nav class="bottom-nav">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="tiktok.html" class="active">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chat</span>
+
+</a>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR</span>
+
+</a>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+</div>
+
+<!-- =========================
+JavaScript
+========================= -->
 
 <script src="../assets/js/utils.js"></script>
-<script src="../assets/js/api.js"></script>
-<script src="../assets/js/tiktok.js"></script>
-<script src="../assets/js/app.js"></script>
 
+<script src="../assets/js/api.js"></script>
+
+<script src="../assets/js/auth.js"></script>
+
+<script src="../assets/js/tiktok.js"></script>
+
+<script src="../assets/js/menu.js"></script>
+
+<script src="../assets/js/nav.js"></script>
+
+<script src="../assets/js/app.js"></script>
 
 </body>
 

@@ -4,7 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Quantum Hub | Fake Chat</title>
 
@@ -20,15 +22,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
+<!-- Sidebar -->
 
 <aside class="sidebar">
-
 
 <div class="logo">
 
@@ -38,59 +38,109 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </div>
 
-
 <ul>
 
 <li>
+
 <a href="dashboard.html">
 
 <i class="fa-solid fa-house"></i>
-Dashboard
+
+<span>Dashboard</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+</li>
 
 <li>
+
 <a href="fakechat.html" class="active">
 
 <i class="fa-solid fa-comments"></i>
-Fake Chat
+
+<span>Fake Chat</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR Generator</span>
+
+</a>
+
+</li>
 
 <li>
+
 <a href="admin.html">
 
 <i class="fa-solid fa-user-shield"></i>
-Admin
+
+<span>Admin</span>
 
 </a>
+
 </li>
 
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
 
 </ul>
 
-
 </aside>
 
-
-
 <main class="main">
-
 
 <header class="navbar">
 
 <div class="navbar-left">
 
-<h1>Fake Chat Generator</h1>
+<button
+id="menuBtn"
+class="menu-btn">
 
-<p>Buat preview chat custom</p>
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div>
+
+<h1>Fake Chat</h1>
+
+<p>Buat preview chat WhatsApp custom</p>
 
 </div>
 
+</div>
+
+<div class="navbar-right">
 
 <div class="avatar">
 
@@ -98,79 +148,461 @@ Q
 
 </div>
 
+</div>
 
 </header>
 
+<!-- =========================
+Statistik
+========================= -->
 
+<section class="stats">
 
-<section class="grid grid-2">
+<div class="card stat-card">
 
+<p>Total Chat</p>
 
-<div class="card">
+<h2 id="totalChat">
 
+0
 
-<h3>Pengaturan Chat</h3>
+</h2>
 
-
-<input
-id="contactName"
-class="input"
-placeholder="Nama kontak">
-
-
-<textarea
-id="messageText"
-class="input"
-placeholder="Isi pesan"
-style="margin-top:15px;height:120px;">
-</textarea>
-
-
-<button
-id="createChat"
-class="btn"
-style="margin-top:15px;">
-
-Buat Chat
-
-</button>
-
+<small>Chat dibuat</small>
 
 </div>
 
+<div class="card stat-card">
 
+<p>Status</p>
 
-<div class="card chat-preview" id="chatPreview">
+<h2>
 
+<span class="badge badge-success">
 
-<h3>Preview</h3>
+Ready
 
+</span>
 
-<p style="color:#94a3b8">
+</h2>
 
-Belum ada chat
-
-</p>
-
+<small>Generator Aktif</small>
 
 </div>
 
+<div class="card stat-card">
 
+<p>Export</p>
+
+<h2>
+
+PNG
+
+</h2>
+
+<small>Kualitas HD</small>
+
+</div>
 
 </section>
 
+<!-- =========================
+Generator
+========================= -->
 
+<section class="section">
 
-</main>
+<h2 class="section-title">
 
+💬 Fake Chat Generator
+
+</h2>
+
+<div class="card">
+
+<label>Nama Kontak</label>
+
+<input
+type="text"
+id="contactName"
+class="input"
+placeholder="Masukkan nama kontak">
+
+<label style="margin-top:18px;">Pesan</label>
+
+<textarea
+id="chatMessage"
+class="input"
+rows="5"
+placeholder="Tulis pesan..."></textarea>
+
+<label style="margin-top:18px;">Waktu</label>
+
+<input
+type="time"
+id="chatTime"
+class="input">
+
+<button
+id="generateBtn"
+class="btn"
+style="margin-top:20px;">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Generate Chat
+
+</button>
 
 </div>
 
+</section>
+
+<!-- =========================
+Preview
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+👀 Preview
+
+</h2>
+
+<div class="card chat-preview" id="chatPreview">
+
+<p style="color:var(--text-secondary);text-align:center;">
+
+Preview chat akan muncul di sini.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- =========================
+Riwayat Fake Chat
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+📋 Riwayat Fake Chat
+
+</h2>
+
+<div class="card">
+
+<table class="table">
+
+<thead>
+
+<tr>
+
+<th>Waktu</th>
+
+<th>Kontak</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyTable">
+
+<tr>
+
+<td>-</td>
+
+<td>Belum ada riwayat</td>
+
+<td>
+
+<span class="badge badge-warning">
+
+Menunggu
+
+</span>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- =========================
+Aksi Cepat
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+⚡ Aksi Cepat
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+📷 Simpan PNG
+
+</h3>
+
+<p>
+
+Download hasil fake chat dalam format PNG.
+
+</p>
+
+<br>
+
+<button
+id="saveImageBtn"
+class="btn">
+
+<i class="fa-solid fa-image"></i>
+
+Simpan PNG
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🗑 Reset
+
+</h3>
+
+<p>
+
+Hapus semua isi form dan preview.
+
+</p>
+
+<br>
+
+<button
+id="resetBtn"
+class="btn btn-outline">
+
+<i class="fa-solid fa-trash"></i>
+
+Reset
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+📤 Bagikan
+
+</h3>
+
+<p>
+
+Bagikan hasil fake chat dengan mudah.
+
+</p>
+
+<br>
+
+<button
+id="shareBtn"
+class="btn">
+
+<i class="fa-solid fa-share-nodes"></i>
+
+Bagikan
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Tips
+========================= -->
+
+<section class="section">
+
+<h2 class="section-title">
+
+💡 Tips
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>
+
+📝 Nama
+
+</h3>
+
+<p>
+
+Gunakan nama kontak sesuai yang ingin ditampilkan.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+💬 Pesan
+
+</h3>
+
+<p>
+
+Pesan bisa dibuat panjang maupun pendek sesuai kebutuhan.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🎨 Preview
+
+</h3>
+
+<p>
+
+Pastikan preview sudah benar sebelum disimpan sebagai gambar.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =========================
+Footer
+========================= -->
+
+<footer class="footer">
+
+<p>
+
+© 2026 Quantum Hub V3
+
+<br>
+
+Powered by Fake Chat Generator
+
+</p>
+
+</footer>
+
+<!-- =========================
+Bottom Navigation (HP)
+========================= -->
+
+<nav class="bottom-nav">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Home</span>
+
+</a>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+<a href="fakechat.html" class="active">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Chat</span>
+
+</a>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR</span>
+
+</a>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</nav>
+
+</main>
+
+</div>
+
+<!-- =========================
+JavaScript
+========================= -->
 
 <script src="../assets/js/utils.js"></script>
-<script src="../assets/js/fakechat.js"></script>
-<script src="../assets/js/app.js"></script>
 
+<script src="../assets/js/api.js"></script>
+
+<script src="../assets/js/auth.js"></script>
+
+<script src="../assets/js/fakechat.js"></script>
+
+<script src="../assets/js/menu.js"></script>
+
+<script src="../assets/js/nav.js"></script>
+
+<script src="../assets/js/app.js"></script>
 
 </body>
 
