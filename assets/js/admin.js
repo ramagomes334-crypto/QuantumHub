@@ -1,123 +1,86 @@
 /* ==========================================
-   QUANTUM HUB V2
-   Admin Users Controller
+   QUANTUM HUB V3
+   Admin Users
 ========================================== */
 
+const Admin={
 
-const Admin = {
+async init(){
 
+await this.loadUsers();
 
-    async init(){
+},
 
+async loadUsers(){
 
-        await this.loadUsers();
+const tbody=document.getElementById("usersTable");
 
+if(!tbody)return;
 
-    },
+tbody.innerHTML="<tr><td colspan='4'>Loading...</td></tr>";
 
+try{
 
-    async loadUsers(){
+const result=await API.users();
 
+if(!result.success){
 
-        const list =
-            document.getElementById(
-                "userList"
-            );
+tbody.innerHTML="<tr><td colspan='4'>Gagal memuat data</td></tr>";
 
+return;
 
-        if(!list) return;
+}
 
+const users=result.data.users||result.data;
 
+tbody.innerHTML="";
 
-        try{
+users.forEach((user,index)=>{
 
+tbody.innerHTML+=`
 
-            const result =
-                await API.users();
+<tr>
 
+<td>${index+1}</td>
 
+<td>${user.username}</td>
 
-            if(
-                result.success &&
-                result.data.success
-            ){
+<td>${user.role}</td>
 
+<td>
 
-                list.innerHTML = "";
+<span class="badge badge-success">
 
+Aktif
 
+</span>
 
-                result.data.users.forEach(
-                    user => {
+</td>
 
+</tr>
 
-                    list.innerHTML += `
+`;
 
-                    <tr>
+});
 
-                    <td>
-                    ${user.id}
-                    </td>
+}catch{
 
+tbody.innerHTML="<tr><td colspan='4'>Server Error</td></tr>";
 
-                    <td>
-                    ${user.username}
-                    </td>
+}
 
-
-                    <td>
-                    ${user.role}
-                    </td>
-
-
-                    </tr>
-
-                    `;
-
-
-                });
-
-
-            } else {
-
-
-                list.innerHTML =
-                `
-                <tr>
-                <td colspan="3">
-                Gagal mengambil data
-                </td>
-                </tr>
-                `;
-
-
-            }
-
-
-
-        }catch(error){
-
-
-            console.error(
-                "Admin Error:",
-                error
-            );
-
-
-        }
-
-
-    }
-
+}
 
 };
 
-
-
 document.addEventListener(
+
 "DOMContentLoaded",
+
 ()=>{
 
-    Admin.init();
+Admin.init();
 
-});
+}
+
+);

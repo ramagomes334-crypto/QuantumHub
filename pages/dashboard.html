@@ -3,447 +3,528 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-    <title>Quantum Hub | Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Quantum Hub | Dashboard</title>
 
-    <!-- CSS -->
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<link rel="stylesheet" href="../assets/css/pages.css">
+<link rel="stylesheet" href="../assets/css/animations.css">
+<link rel="stylesheet" href="../assets/css/responsive.css">
 
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/layout.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
-    <link rel="stylesheet" href="../assets/css/pages.css">
-    <link rel="stylesheet" href="../assets/css/animations.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css">
-
-
-    <!-- Font Awesome -->
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<style>
-
-@media(max-width:768px){
-
-    .sidebar{
-        display:none !important;
-    }
-
-
-    .main{
-        margin-left:0 !important;
-        width:100% !important;
-        padding:15px !important;
-    }
-
-
-    .app{
-        display:block !important;
-    }
-
-
-    .tools{
-        display:flex !important;
-        flex-direction:column !important;
-    }
-
-
-    .stats{
-        display:flex !important;
-        flex-direction:column !important;
-    }
-
-
-    .menu-btn{
-
-        display:flex !important;
-
-        font-size:25px;
-
-        border:none;
-
-        background:none;
-
-    }
-
-}
-
-</style>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
-
 <body>
-
 
 <div class="app">
 
+<!-- Sidebar Desktop -->
 
+<aside class="sidebar">
 
-    <!-- Sidebar -->
+<div class="logo">
 
-    <aside class="sidebar">
+<i class="fa-solid fa-cube"></i>
 
+<span>Quantum Hub</span>
 
-        <div class="logo">
+</div>
 
-            <i class="fa-solid fa-cube"></i>
+<ul>
 
-            <span>
-                Quantum Hub
+<li>
+
+<a href="dashboard.html" class="active">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="tiktok.html">
+
+<i class="fa-brands fa-tiktok"></i>
+
+<span>TikTok</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="fakechat.html">
+
+<i class="fa-solid fa-comments"></i>
+
+<span>Fake Chat</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="qr.html">
+
+<i class="fa-solid fa-qrcode"></i>
+
+<span>QR Generator</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="admin.html">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<span>Admin</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- Main -->
+
+<main class="main">
+
+<header class="navbar">
+
+<div class="navbar-left">
+
+<button id="menuBtn" class="menu-btn">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div>
+
+<h1>Dashboard</h1>
+
+<p>Selamat datang di Quantum Hub</p>
+
+</div>
+
+</div>
+
+<div class="navbar-right">
+
+<div class="avatar">
+
+Q
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Statistik -->
+
+<section class="stats">
+
+    <div class="card stat-card">
+
+        <p>Total User</p>
+
+        <h2 id="totalUsers">0</h2>
+
+        <small>User Terdaftar</small>
+
+    </div>
+
+    <div class="card stat-card">
+
+        <p>Total Tools</p>
+
+        <h2 id="totalTools">3</h2>
+
+        <small>Tools Aktif</small>
+
+    </div>
+
+    <div class="card stat-card">
+
+        <p>Status API</p>
+
+        <h2 id="apiStatus">
+
+            <span class="badge badge-success">
+                Online
+            </span>
+
+        </h2>
+
+        <small>Cloudflare Worker</small>
+
+    </div>
+
+</section>
+
+<!-- Quick Action -->
+
+<section class="section">
+
+    <h2 class="section-title">
+
+        🚀 Quick Tools
+
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>📥 TikTok Downloader</h3>
+
+            <p>Download video tanpa watermark.</p>
+
+            <br>
+
+            <a href="tiktok.html" class="btn">
+
+                Buka
+
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>💬 Fake Chat</h3>
+
+            <p>Buat tampilan chat WhatsApp palsu.</p>
+
+            <br>
+
+            <a href="fakechat.html" class="btn">
+
+                Buka
+
+            </a>
+
+        </div>
+
+        <div class="card">
+
+            <h3>📱 QR Generator</h3>
+
+            <p>Generate QR Code dengan cepat.</p>
+
+            <br>
+
+            <a href="qr.html" class="btn">
+
+                Buka
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Server Status -->
+
+<section class="section">
+
+    <h2 class="section-title">
+
+        🌐 Server Status
+
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>☁️ Cloudflare Worker</h3>
+
+            <span class="badge badge-success">
+
+                Running
+
             </span>
 
         </div>
 
+        <div class="card">
 
+            <h3>🗄 D1 Database</h3>
 
-        <ul>
+            <span class="badge badge-success">
 
+                Connected
 
-            <li>
+            </span>
 
-                <a href="dashboard.html" class="active">
+        </div>
 
-                    <i class="fa-solid fa-house"></i>
+        <div class="card">
 
-                    Dashboard
+            <h3>⚡ API</h3>
 
-                </a>
+            <span class="badge badge-success">
 
-            </li>
+                Active
 
+            </span>
 
+        </div>
 
-            <li>
+    </div>
 
-                <a href="tiktok.html">
+</section>
 
-                    <i class="fa-brands fa-tiktok"></i>
+<!-- User Info -->
 
-                    TikTok
+<section class="section">
 
-                </a>
+    <h2 class="section-title">
 
-            </li>
+        👤 Informasi Akun
 
+    </h2>
 
+    <div class="cards">
 
-            <li>
+        <div class="card">
 
-                <a href="fakechat.html">
+            <h3 id="welcomeUser">
 
-                    <i class="fa-solid fa-comments"></i>
+                Halo, Admin 👋
 
-                    Fake Chat
+            </h3>
 
-                </a>
+            <p>
 
-            </li>
+                Selamat datang kembali di Quantum Hub.
 
+            </p>
 
+            <br>
 
-            <li>
+            <span class="badge badge-success">
 
-                <a href="qr.html">
+                Online
 
-                    <i class="fa-solid fa-qrcode"></i>
+            </span>
 
-                    QR Generator
+        </div>
 
-                </a>
+        <div class="card">
 
-            </li>
+            <h3>
 
+                Login Terakhir
 
+            </h3>
 
-            <li>
+            <p id="lastLogin">
 
-                <a href="admin.html">
+                Baru saja
 
-                    <i class="fa-solid fa-user-shield"></i>
+            </p>
 
-                    Admin
+        </div>
 
-                </a>
+        <div class="card">
 
-            </li>
+            <h3>
 
+                Role
 
+            </h3>
 
-            <li>
+            <p id="userRole">
 
-                <a href="settings.html">
+                Administrator
 
-                    <i class="fa-solid fa-gear"></i>
+            </p>
 
-                    Settings
+        </div>
 
-                </a>
+    </div>
 
-            </li>
+</section>
 
+<!-- Aktivitas -->
 
-        </ul>
+<section class="section">
 
+    <h2 class="section-title">
 
-    </aside>
+        📋 Aktivitas Terbaru
 
+    </h2>
 
+    <div class="card">
 
+        <table class="table">
 
+            <thead>
 
-    <!-- Main -->
+                <tr>
 
-    <main class="main">
+                    <th>Waktu</th>
 
+                    <th>Aktivitas</th>
 
+                    <th>Status</th>
 
-        <!-- Navbar -->
+                </tr>
 
-        <header class="navbar">
+            </thead>
 
+            <tbody>
 
-            <div class="navbar-left">
+                <tr>
 
+                    <td>Baru saja</td>
 
+                    <td>Login ke Dashboard</td>
 
-                <button
-                class="menu-btn"
-                id="menuBtn">
+                    <td>
 
+                        <span class="badge badge-success">
 
-                    <i class="fa-solid fa-bars"></i>
+                            Berhasil
 
+                        </span>
 
-                </button>
+                    </td>
 
+                </tr>
 
+                <tr>
 
-                <div>
+                    <td>-</td>
 
+                    <td>Belum ada aktivitas lain</td>
 
-                    <h1>
-                        Dashboard
-                    </h1>
+                    <td>
 
+                        <span class="badge badge-warning">
 
-                    <p>
-                        Selamat datang di Quantum Hub
-                    </p>
+                            Menunggu
 
+                        </span>
 
-                </div>
+                    </td>
 
+                </tr>
 
+            </tbody>
 
-            </div>
+        </table>
 
+    </div>
 
+</section>
 
+<!-- Footer -->
 
+<footer class="footer">
 
-            <div class="navbar-right">
+    <p>
 
+        © 2026 Quantum Hub V3 • Powered by Cloudflare Workers & D1
 
-                <div class="avatar">
+    </p>
 
-                    Q
+</footer>
 
-                </div>
+<!-- Bottom Navigation (HP) -->
 
+<nav class="bottom-nav">
 
-            </div>
+    <a href="dashboard.html" class="active">
 
+        <i class="fa-solid fa-house"></i>
 
+        <span>Home</span>
 
-        </header>
+    </a>
 
+    <a href="tiktok.html">
 
+        <i class="fa-brands fa-tiktok"></i>
 
+        <span>TikTok</span>
 
+    </a>
 
+    <a href="fakechat.html">
 
+        <i class="fa-solid fa-comments"></i>
 
-        <!-- Statistik -->
+        <span>Chat</span>
 
+    </a>
 
-        <section class="stats">
+    <a href="qr.html">
 
+        <i class="fa-solid fa-qrcode"></i>
 
-            <div class="card stat-card">
+        <span>QR</span>
 
+    </a>
 
-                <p>
-                    Total User
-                </p>
+    <a href="admin.html">
 
+        <i class="fa-solid fa-user-shield"></i>
 
-                <h2 id="totalUsers">
-                    0
-                </h2>
+        <span>Admin</span>
 
+    </a>
 
-            </div>
+</nav>
 
-
-
-
-            <div class="card stat-card">
-
-
-                <p>
-                    Total Tools
-                </p>
-
-
-                <h2>
-                    3
-                </h2>
-
-
-            </div>
-
-
-
-
-
-            <div class="card stat-card">
-
-
-                <p>
-                    Status
-                </p>
-
-
-                <h2>
-                    Online
-                </h2>
-
-
-            </div>
-
-
-
-        </section>
-
-
-
-
-
-
-
-        <!-- Tools -->
-
-
-        <section class="tools">
-
-
-
-            <div class="card hover-up">
-
-
-                <h3>
-                    📥 TikTok Downloader
-                </h3>
-
-
-                <p>
-                    Download video tanpa watermark.
-                </p>
-
-
-                <button class="btn">
-                    Buka
-                </button>
-
-
-            </div>
-
-
-
-
-
-            <div class="card hover-up">
-
-
-                <h3>
-                    💬 Fake Chat
-                </h3>
-
-
-                <p>
-                    Buat tampilan chat palsu.
-                </p>
-
-
-                <button class="btn">
-                    Buka
-                </button>
-
-
-            </div>
-
-
-
-
-
-            <div class="card hover-up">
-
-
-                <h3>
-                    📱 QR Generator
-                </h3>
-
-
-                <p>
-                    Buat QR Code dengan mudah.
-                </p>
-
-
-                <button class="btn">
-                    Buka
-                </button>
-
-
-            </div>
-
-
-
-        </section>
-
-
-
-
-
-    </main>
-
-
-
+</main>
 
 </div>
 
-
-
-
-
-<!-- JS -->
+<!-- JavaScript -->
 
 <script src="../assets/js/utils.js"></script>
-
 <script src="../assets/js/api.js"></script>
-
 <script src="../assets/js/auth.js"></script>
-
 <script src="../assets/js/dashboard.js"></script>
-
 <script src="../assets/js/menu.js"></script>
-
 <script src="../assets/js/app.js"></script>
-
-
 
 </body>
 

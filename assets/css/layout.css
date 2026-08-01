@@ -1,218 +1,592 @@
 /* ==========================================
-   QUANTUM HUB V2
+   QUANTUM HUB V3
    Layout
 ========================================== */
 
-/* Wrapper */
+/* ===========================
+   Wrapper
+=========================== */
 
-.app {
-  
-  display: flex;
-  
-  min-height: 100vh;
-  
+.app{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:transparent;
+
 }
 
 /* ===========================
-   Sidebar
+   Sidebar Desktop
 =========================== */
 
-.sidebar {
-  
-  width: 270px;
-  
-  background: rgba(17, 24, 39, .90);
-  
-  backdrop-filter: blur(20px);
-  
-  border-right: 1px solid var(--border);
-  
-  position: fixed;
-  
-  left: 0;
-  
-  top: 0;
-  
-  bottom: 0;
-  
-  padding: 25px;
-  
-  overflow-y: auto;
-  
+.sidebar{
+
+    width:270px;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    z-index:1000;
+
+    overflow-y:auto;
+
+    background:rgba(17,24,39,.92);
+
+    backdrop-filter:blur(18px);
+
+    border-right:1px solid var(--border);
+
+    transition:.3s;
+
+    padding:22px;
+
 }
 
-.logo {
-  
-  display: flex;
-  
-  align-items: center;
-  
-  gap: 12px;
-  
-  margin-bottom: 40px;
-  
-  font-size: 24px;
-  
-  font-weight: 700;
-  
+/* Logo */
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:35px;
+
+    font-size:24px;
+
+    font-weight:700;
+
 }
 
-.logo i {
-  
-  color: var(--primary);
-  
-  font-size: 30px;
-  
+.logo i{
+
+    font-size:30px;
+
+    color:var(--primary);
+
 }
 
-.sidebar ul {
-  
-  display: flex;
-  
-  flex-direction: column;
-  
-  gap: 10px;
-  
+/* Menu */
+
+.sidebar ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
 }
 
-.sidebar a {
-  
-  display: flex;
-  
-  align-items: center;
-  
-  gap: 15px;
-  
-  padding: 14px 18px;
-  
-  border-radius: 14px;
-  
-  color: var(--text-secondary);
-  
-  transition: var(--transition);
-  
+.sidebar li{
+
+    width:100%;
+
 }
 
-.sidebar a:hover {
-  
-  background: rgba(37, 99, 235, .15);
-  
-  color: var(--text);
-  
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border-radius:16px;
+
+    color:var(--text-secondary);
+
+    transition:.25s;
+
 }
 
-.sidebar a.active {
-  
-  background: var(--primary);
-  
-  color: #fff;
-  
+.sidebar a i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.sidebar a:hover{
+
+    background:rgba(37,99,235,.15);
+
+    color:#fff;
+
+}
+
+.sidebar a.active{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #4f8cff
+    );
+
+    color:#fff;
+
+    box-shadow:0 8px 20px rgba(37,99,235,.35);
+
 }
 
 /* ===========================
    Main
 =========================== */
 
-.main {
-  
-  flex: 1;
-  
-  margin-left: 270px;
-  
-  padding: 30px;
-  
+.main{
+
+    flex:1;
+
+    margin-left:270px;
+
+    min-height:100vh;
+
+    padding:28px;
+
+    transition:.3s;
+
 }
 
 /* ===========================
    Navbar
 =========================== */
 
-.navbar {
-  
-  display: flex;
-  
-  justify-content: space-between;
-  
-  align-items: center;
-  
-  margin-bottom: 30px;
-  
+.navbar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:30px;
+
 }
 
-.navbar-left h1 {
-  
-  font-size: 30px;
-  
-  font-weight: 700;
-  
+.navbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
 }
 
-.navbar-left p {
-  
-  color: var(--text-secondary);
-  
-  margin-top: 5px;
-  
+.navbar-left h1{
+
+    font-size:30px;
+
+    font-weight:700;
+
 }
 
-.navbar-right {
-  
-  display: flex;
-  
-  align-items: center;
-  
-  gap: 15px;
-  
+.navbar-left p{
+
+    margin-top:5px;
+
+    color:var(--text-secondary);
+
 }
 
-.avatar {
-  
-  width: 48px;
-  
-  height: 48px;
-  
-  border-radius: 50%;
-  
-  background: var(--primary);
-  
-  display: flex;
-  
-  justify-content: center;
-  
-  align-items: center;
-  
-  font-weight: 700;
-  
-  color: #fff;
-  
+.navbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+}
+
+/* Avatar */
+
+.avatar{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        #60a5fa
+    );
+
+    color:#fff;
+
+    font-weight:700;
+
+    font-size:18px;
+
+    box-shadow:0 8px 18px rgba(37,99,235,.35);
+
+}
+
+/* Tombol Menu HP */
+
+.menu-btn{
+
+    display:none;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    font-size:20px;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* ===========================
+   Content
+=========================== */
+
+.content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
 }
 
 /* ===========================
    Grid
 =========================== */
 
-.grid {
-  
-  display: grid;
-  
-  gap: 20px;
-  
+.grid{
+
+    display:grid;
+
+    gap:20px;
+
 }
 
-.grid-2 {
-  
-  grid-template-columns: repeat(2, 1fr);
-  
+.grid-2{
+
+    grid-template-columns:repeat(2,1fr);
+
 }
 
-.grid-3 {
-  
-  grid-template-columns: repeat(3, 1fr);
-  
+.grid-3{
+
+    grid-template-columns:repeat(3,1fr);
+
 }
 
-.grid-4 {
-  
-  grid-template-columns: repeat(4, 1fr);
-  
+.grid-4{
+
+    grid-template-columns:repeat(4,1fr);
+
+}
+
+/* ===========================
+   Card Layout
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+}
+
+/* ===========================
+   Section
+=========================== */
+
+.section{
+
+    margin-top:25px;
+
+}
+
+.section-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+/* ===========================
+   Bottom Navigation
+=========================== */
+
+.bottom-nav{
+
+    display:none;
+
+    position:fixed;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    height:70px;
+
+    background:rgba(17,24,39,.95);
+
+    backdrop-filter:blur(18px);
+
+    border-top:1px solid var(--border);
+
+    justify-content:space-around;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.bottom-nav a{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:4px;
+
+    color:var(--text-secondary);
+
+    font-size:12px;
+
+    transition:.25s;
+
+}
+
+.bottom-nav a i{
+
+    font-size:20px;
+
+}
+
+.bottom-nav a.active{
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+.footer{
+
+    margin-top:40px;
+
+    padding:20px 0;
+
+    text-align:center;
+
+    color:var(--text-secondary);
+
+    font-size:14px;
+
+}
+
+/* ===========================
+   Scroll Fix
+=========================== */
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    overflow-x:hidden;
+
+}
+
+/* ===========================
+   Responsive Mobile
+=========================== */
+
+@media screen and (max-width:768px){
+
+    /* Wrapper */
+
+    .app{
+
+        display:block;
+
+    }
+
+    /* Sidebar disembunyikan */
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    /* Main */
+
+    .main{
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:16px;
+
+        padding-bottom:90px;
+
+    }
+
+    /* Navbar */
+
+    .navbar{
+
+        margin-bottom:20px;
+
+    }
+
+    .navbar-left{
+
+        gap:12px;
+
+    }
+
+    .navbar-left h1{
+
+        font-size:24px;
+
+    }
+
+    .navbar-left p{
+
+        font-size:13px;
+
+    }
+
+    /* Tombol Menu */
+
+    .menu-btn{
+
+        display:flex;
+
+    }
+
+    /* Semua grid jadi 1 kolom */
+
+    .grid,
+
+    .grid-2,
+
+    .grid-3,
+
+    .grid-4,
+
+    .cards{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+    }
+
+    /* Bottom Navigation muncul */
+
+    .bottom-nav{
+
+        display:flex;
+
+    }
+
+}
+
+/* ===========================
+   Responsive Tablet
+=========================== */
+
+@media screen and (min-width:769px) and (max-width:1100px){
+
+    .sidebar{
+
+        width:220px;
+
+    }
+
+    .main{
+
+        margin-left:220px;
+
+    }
+
+    .grid-4{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ===========================
+   Desktop Besar
+=========================== */
+
+@media screen and (min-width:1600px){
+
+    .main{
+
+        max-width:1600px;
+
+        margin-left:270px;
+
+    }
+
 }

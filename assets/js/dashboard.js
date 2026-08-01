@@ -1,120 +1,154 @@
 /* ==========================================
-   QUANTUM HUB V2
+   QUANTUM HUB V3
    Dashboard Controller
 ========================================== */
 
-
 const Dashboard = {
 
+    async init(){
 
-    init() {
+        await this.loadUser();
 
-        this.loadUser();
+        await this.loadStats();
 
-        this.loadStats();
+        this.loadTime();
+
+        this.loadStatus();
 
     },
 
+    /* ===========================
+       User
+    =========================== */
 
-    loadUser() {
+    async loadUser(){
 
+        const user = Auth.getUser();
 
-        const user =
-            Auth.getUser();
-
-
-        if (!user) return;
-
-
+        if(!user) return;
 
         const avatar =
             document.querySelector(".avatar");
 
-
-
-        if (avatar) {
+        if(avatar){
 
             avatar.textContent =
                 user.username
-                    .charAt(0)
-                    .toUpperCase();
+                .charAt(0)
+                .toUpperCase();
 
         }
 
+        const welcome =
+            document.getElementById("welcomeUser");
+
+        if(welcome){
+
+            welcome.innerHTML =
+                `Halo, ${user.username} 👋`;
+
+        }
+
+        const role =
+            document.getElementById("userRole");
+
+        if(role){
+
+            role.textContent =
+                user.role || "Administrator";
+
+        }
 
     },
 
+    /* ===========================
+       Stats
+    =========================== */
 
-    async loadStats() {
+    async loadStats(){
 
-
-        const totalUsers =
-            document.getElementById(
-                "totalUsers"
-            );
-
-
-        if (!totalUsers) return;
-
-
-
-        try {
-
+        try{
 
             const result =
                 await API.stats();
 
+            if(result.success){
 
+                const data = result.data;
 
-            if (
-                result.success &&
-                result.data.success
-            ) {
+                document.getElementById("totalUsers").textContent =
+                    data.users;
 
+                const tools =
+                    document.getElementById("totalTools");
 
-                totalUsers.textContent =
-                    result.data.users;
+                if(tools){
 
+                    tools.textContent =
+                        data.tools;
 
-            } else {
+                }
 
+                const status =
+                    document.getElementById("apiStatus");
 
-                totalUsers.textContent =
-                    "0";
+                if(status){
 
+                    status.innerHTML =
+                    `<span class="badge badge-success">
+                        ${data.status}
+                    </span>`;
+
+                }
 
             }
 
+        }catch(err){
 
-
-        } catch (error) {
-
-
-            console.error(
-                "Stats Error:",
-                error
-            );
-
-
-            totalUsers.textContent =
-                "0";
-
+            console.error(err);
 
         }
 
+    },
+
+    /* ===========================
+       Login Time
+    =========================== */
+
+    loadTime(){
+
+        const login =
+            document.getElementById("lastLogin");
+
+        if(login){
+
+            login.textContent =
+                new Date().toLocaleString("id-ID");
+
+        }
+
+    },
+
+    /* ===========================
+       Online Status
+    =========================== */
+
+    loadStatus(){
+
+        console.log("Quantum Hub Online");
 
     }
 
-
 };
 
-
-
 document.addEventListener(
+
     "DOMContentLoaded",
-    () => {
+
+    ()=>{
 
         Dashboard.init();
 
     }
+
 );

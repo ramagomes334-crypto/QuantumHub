@@ -1,159 +1,309 @@
 /* ==========================================
-   QUANTUM HUB V2
-   MOBILE RESPONSIVE FIX
+   QUANTUM HUB V3
+   Responsive
 ========================================== */
 
+/* ===========================
+   Laptop
+=========================== */
 
-.menu-btn{
-
-    display:none;
-
-}
-
-
-
-@media screen and (max-width:768px){
-
-
-    /* APP */
-
-    .app{
-
-        display:block !important;
-
-        min-height:100vh;
-
-    }
-
-
-
-    /* HILANGKAN SIDEBAR HP */
+@media (max-width:1200px){
 
     .sidebar{
 
-        display:none !important;
-
-        position:static !important;
+        width:230px;
 
     }
-
-
-
-    /* MAIN FULL */
 
     .main{
 
-        width:100% !important;
-
-        margin-left:0 !important;
-
-        padding:15px !important;
+        margin-left:230px;
 
     }
 
+    .stats{
 
+        grid-template-columns:repeat(2,1fr);
 
-    /* NAVBAR */
+    }
+
+    .tools{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* ===========================
+   Tablet
+=========================== */
+
+@media (max-width:992px){
+
+    .sidebar{
+
+        width:210px;
+
+    }
+
+    .main{
+
+        margin-left:210px;
+
+        padding:20px;
+
+    }
 
     .navbar{
 
-        display:flex !important;
+        flex-wrap:wrap;
+
+        gap:15px;
+
+    }
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tools{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media (max-width:768px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main{
+
+        margin-left:0;
 
         width:100%;
 
-        justify-content:space-between;
+        padding:16px;
 
-        align-items:center;
-
-        margin-bottom:20px;
+        padding-bottom:90px;
 
     }
 
-
-
-    .navbar-left{
-
-        display:flex;
+    .navbar{
 
         align-items:center;
 
-        gap:10px;
-
     }
-
-
-
-    /* GARIS 3 PEMANIS */
 
     .menu-btn{
 
-        display:flex !important;
+        display:flex;
+
+    }
+
+    .bottom-nav{
+
+        display:flex;
+
+    }
+
+    .avatar{
 
         width:42px;
 
         height:42px;
 
-        border:none;
-
-        background:transparent;
-
-        align-items:center;
-
-        justify-content:center;
-
-        font-size:24px;
-
-        cursor:pointer;
+        font-size:16px;
 
     }
-
-
-
-    /* STAT */
-
-    .stats{
-
-        display:flex !important;
-
-        flex-direction:column !important;
-
-        gap:15px;
-
-    }
-
-
-
-    /* TOOLS */
-
-    .tools{
-
-        display:flex !important;
-
-        flex-direction:column !important;
-
-        gap:15px;
-
-    }
-
-
 
     .card{
 
-        width:100% !important;
+        padding:18px;
 
     }
 
+}
 
+/* ===========================
+   Mobile Extra Fix
+=========================== */
 
-    /* GRID */
+@media (max-width:768px){
 
-    .grid-2,
-    .grid-3,
-    .grid-4{
+    html,
+    body{
 
-        grid-template-columns:1fr !important;
+        overflow-x:hidden;
 
     }
 
+    *{
+
+        max-width:100%;
+
+    }
+
+    .app{
+
+        width:100%;
+
+        overflow:hidden;
+
+    }
+
+    .stats,
+    .tools,
+    .cards{
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+    }
+
+    .card{
+
+        width:100%;
+
+        border-radius:18px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+    .navbar-left h1{
+
+        font-size:22px;
+
+    }
+
+    .navbar-left p{
+
+        font-size:13px;
+
+    }
+
+    .section-title{
+
+        font-size:20px;
+
+    }
+
+    table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+    .bottom-nav{
+
+        display:flex;
+
+        position:fixed;
+
+        bottom:0;
+
+        left:0;
+
+        width:100%;
+
+        height:70px;
+
+        background:rgba(17,24,39,.95);
+
+        backdrop-filter:blur(18px);
+
+        border-top:1px solid var(--border);
+
+        z-index:9999;
+
+    }
+
+    .bottom-nav a{
+
+        flex:1;
+
+        text-align:center;
+
+        padding:10px 0;
+
+        color:var(--text-secondary);
+
+        font-size:12px;
+
+    }
+
+    .bottom-nav a.active{
+
+        color:var(--primary);
+
+    }
+
+}
+
+/* ===========================
+   Small Phone
+=========================== */
+
+@media (max-width:400px){
+
+    .main{
+
+        padding:12px;
+
+        padding-bottom:90px;
+
+    }
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+    .navbar-left h1{
+
+        font-size:20px;
+
+    }
+
+    .card{
+
+        padding:15px;
+
+    }
+
+    .btn{
+
+        font-size:14px;
+
+        padding:10px 16px;
+
+    }
 
 }
